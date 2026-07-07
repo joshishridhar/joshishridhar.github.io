@@ -1,0 +1,218 @@
+:root {
+  --bg: #f4f7fb;
+  --paper: #ffffff;
+  --ink: #18253e;
+  --muted: #61708a;
+  --brand: #138ac9;
+  --brand-2: #0fbc91;
+  --line: #dbe5f2;
+  --tag: #edf6ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #eef4fb, #e7eef8);
+  color: var(--ink);
+  font-family: "Outfit", sans-serif;
+}
+
+.resume-shell {
+  width: min(1180px, 94vw);
+  margin: 2rem auto;
+}
+
+.resume-hero {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 1.5rem;
+  padding: 1.8rem;
+  background: linear-gradient(135deg, #13233e, #0d1a2f);
+  color: #f5f8ff;
+  border-radius: 1.3rem;
+  box-shadow: 0 22px 60px rgba(13, 26, 47, 0.2);
+}
+
+.eyebrow {
+  margin: 0 0 0.7rem;
+  color: #7ed7ff;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+h1 {
+  margin: 0;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.role {
+  margin: 0.8rem 0 0;
+  font-size: 1.12rem;
+  color: #b8cae7;
+}
+
+.summary {
+  max-width: 60ch;
+  color: #dae6fa;
+}
+
+.hero-meta {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.hero-meta a,
+.hero-meta p {
+  margin: 0;
+  color: #f5f8ff;
+  text-decoration: none;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.side-column,
+.main-column {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.resume-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  padding: 1.2rem;
+  box-shadow: 0 14px 40px rgba(27, 46, 83, 0.08);
+}
+
+.resume-card h2 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  color: var(--ink);
+}
+
+.resume-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.98rem;
+}
+
+.resume-card p {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+}
+
+.tag-list,
+.stack-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.tag-list li,
+.stack-list li {
+  padding: 0.42rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--tag);
+  font-size: 0.86rem;
+  color: var(--ink);
+}
+
+.stack-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.stack-list li {
+  border-radius: 0.8rem;
+}
+
+.skill-block + .skill-block,
+.experience-item + .experience-item,
+.item-block + .item-block {
+  margin-top: 1rem;
+}
+
+.item-block span,
+.title-row span {
+  color: var(--brand);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 0.45rem;
+}
+
+.experience-item ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.experience-item li + li {
+  margin-top: 0.35rem;
+}
+
+.compact p {
+  margin-top: 0.2rem;
+}
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  .resume-shell {
+    width: 100%;
+    margin: 0;
+  }
+
+  .resume-hero,
+  .resume-card {
+    box-shadow: none;
+  }
+
+  .resume-hero {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .resume-hero,
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  .title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
